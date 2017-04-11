@@ -1,0 +1,8 @@
+name: ClassicPvP
+authors:
+  - "Jack Noordhuis"
+version: 0.0.3_ALPHA
+main: \classicpvp\Main
+api:
+  - 1.0.0
+  - 2.0.0

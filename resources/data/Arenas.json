@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Secluded Beach",
+    "author": "Phoenix Creative",
+    "a": "207.5, 3, -281.8",
+    "b": "229.5, 78, -169.5"
+  }, {
+    "name": "Desert Reef",
+    "author": "Phoenix Creative",
+    "a": "-234.5, 2, -299.6",
+    "b": "218.5, 5, -185.5"
+  }, {
+    "name": "Forgotten Keep",
+    "author": "Phoenix Creative",
+    "a": "-218.5, 5, 246.5",
+    "b": "-202.5, 52, 133.5"
+  }, {
+    "name": "Abandoned Mines",
+    "author": "Phoenix Creative",
+    "a": "256.5, 6, 208.5",
+    "b": "164.5, 42, 187.5"
+  }
+]

@@ -1,0 +1,103 @@
+[
+  {
+    "name": "&e» &lSecluded Beach&r&e «&r",
+    "pos": "7, 33, -19",
+    "skin-file": "forgotten_lands_npc.skin",
+    "yaw": 180,
+    "pitch": 2,
+    "type": "join",
+    "data": {
+      "arena": "Secluded Beach"
+    }
+  }, {
+    "name": "&e» &lDesert Reef&r&e «&r",
+    "pos": "12, 33, -15",
+    "skin-file": "end_npc.skin",
+    "yaw": 180,
+    "pitch": 2,
+    "type": "join",
+    "data": {
+      "arena": "Desert Reef"
+    }
+  }, {
+    "name": "&e» &lForgotten Keep&r&e «&r",
+    "pos": "-11, 33, -15",
+    "skin-file": "highlands_road_npc.skin",
+    "yaw": 180,
+    "pitch": 2,
+    "type": "join",
+    "data": {
+      "arena": "Forgotten Keep"
+    }
+  }, {
+    "name": "&e» &lAbandoned Mines&r&e «&r",
+    "pos": "-6, 33, -19",
+    "skin-file": "beach_side_npc.skin",
+    "yaw": 180,
+    "pitch": 2,
+    "type": "join",
+    "data": {
+      "arena": "Abandoned Mines"
+    }
+  }, {
+    "name": "&l&6JackNoordhuis",
+    "pos": "-27.5, 33, -9.5",
+    "skin-file": "jacknoordhuis.skin",
+    "yaw": 320,
+    "pitch": 2,
+    "type": "display",
+    "data": {
+      "text": "  \n&eHello there! I'm &6JackNoordhuis&r&e, proud owner of the &6CrazedCraft network&r&e. I'm the person that keeps all the servers up and running as well as providing quality updates to the entire network. You can follow me on twitter for news and updates &9@&bJackNoordhuis&e!\n  "
+    }
+  }, {
+    "name": "&l&6JackNoordhuis",
+    "pos": "28.5, 33, -9.5",
+    "skin-file": "jacknoordhuis.skin",
+    "yaw": 40,
+    "pitch": 2,
+    "type": "display",
+    "data": {
+      "text": "  \n&eHello there! I'm &6JackNoordhuis&r&e, proud owner of the &6CrazedCraft network&r&e. I'm the person that keeps all the servers up and running as well as providing quality updates to the entire network. You can follow me on twitter for news and updates &9@&bJackNoordhuis&e!\n  "
+    }
+  }, {
+    "name": "&l&eMegaOS",
+    "pos": "-27.5, 33, -14.5",
+    "skin-file": "megaos.skin",
+    "yaw": 320,
+    "pitch": 2,
+    "type": "display",
+    "data": {
+      "text": "  \n&eHello there! I'm &6MegaOS&r&e, proud builder for the &6CrazedCraft network&r&e. Thanks for playing on &6CrazedCraft&e and enjoy pvping&r&e! You can follow me on twitter for awesome map spoilers! &9@&bitsMegaOS&e\n  "
+    }
+  }, {
+    "name": "&l&eThatAussie",
+    "pos": "-27.5, 33, -19.5",
+    "skin-file": "thataussie.skin",
+    "yaw": 320,
+    "pitch": 2,
+    "type": "display",
+    "data": {
+      "text": "  \n&eHello there! I'm &6ThatAussie&r&e, proud builder for the &6CrazedCraft network&r&e. Sadly I've left the community but you can still enjoy my awesome builds in my absence!\n  "
+    }
+  }, {
+    "name": "&l&eJakeisthebest11",
+    "pos": "28.5, 33, -14.5",
+    "skin-file": "jakeisthebest11.skin",
+    "yaw": 40,
+    "pitch": 2,
+    "type": "display",
+    "data": {
+      "text": "  \n&eHello there! I'm &6Jakeisthebest11&r&e, proud builder for the &6CrazedCraft network&r&e. You can follow me on twitter for the latest news about the network! &9@&bJakeisthebest1&e\n  "
+    }
+  }, {
+    "name": "&l&eSamtheBeast7",
+    "pos": "28.5, 33, -19.5",
+    "skin-file": "samthebeast7.skin",
+    "yaw": 40,
+    "pitch": 2,
+    "type": "display",
+    "data": {
+      "text": "  \n&eHello there! I'm &6SamtheBeast7&r&e, proud builder for the &6CrazedCraft network&r&e. You can follow me on twitter for cool updates and more! &9@&bSamtheBeast7&e\n  "
+    }
+  }
+]
