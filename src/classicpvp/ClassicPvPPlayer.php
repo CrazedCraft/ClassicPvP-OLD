@@ -221,6 +221,7 @@ class ClassicPvPPlayer extends CorePlayer {
 		$this->removeAllEffects();
 		$this->extinguish();
 		$this->resetKillStreak();
+		$this->getInventory()->clearAll();
 		parent::kill($forReal);
 		if($this->isConnected()) $this->plugin->giveLobbyItems($this);
 	}
@@ -236,19 +237,11 @@ class ClassicPvPPlayer extends CorePlayer {
 	}
 
 	public function onInteract(PlayerInteractEvent $event) {
-		$item = $event->getItem();
-		if($this->getState() === CorePlayer::STATE_LOBBY) {
-			$event->setCancelled(true);
-			if($item->getId() === Item::CLOCK) {
-				$this->setPlayersVisible(!$this->hasPlayersVisible());
-				$this->sendTranslatedMessage("TOGGLE_PLAYERS", [], true);
-			} elseif($item->getId() === Item::BED) {
-				$this->kill();
-				$this->sendTranslatedMessage("HUB_COMMAND", [], true);
-			}
-		} elseif($event->getBlock()->getId() === Item::TRAPDOOR) {
+		if($this->getState() === self::STATE_PLAYING and $event->getBlock()->getId() === Item::TRAPDOOR) {
 			$event->setCancelled(true);
 		}
+
+		parent::onInteract($event);
 	}
 
 }

@@ -45,6 +45,7 @@ class ClassicPvPListener implements Listener {
 	public function onJoin(PlayerJoinEvent $event) {
 		$player = $event->getPlayer();
 		$player->kill();
+		$this->plugin->addGuiConatiners($player);
 		$this->plugin->giveLobbyItems($player);
 	}
 

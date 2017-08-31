@@ -19,8 +19,12 @@
 namespace classicpvp;
 
 use classicpvp\command\RestoreKitCommand;
+use classicpvp\gui\containers\ServerSelectionContainer;
+use classicpvp\gui\item\PlayerToggleItem;
+use classicpvp\gui\item\serverselectors\ServerSelector;
+use classicpvp\gui\item\SpawnWarpItem;
+use core\CorePlayer;
 use core\entity\text\UpdatableFloatingText;
-use core\language\LanguageManager;
 use core\Utils;
 use classicpvp\arena\ArenaManager;
 use classicpvp\command\HubCommand;
@@ -35,6 +39,8 @@ use pocketmine\utils\Config;
 use pocketmine\utils\PluginException;
 
 class Main extends PluginBase {
+
+	const GUI_SERVER_SELECTION_CONTAINER = "server_selection_container";
 
 	/** @var \core\Main */
 	private $components;
@@ -186,17 +192,16 @@ class Main extends PluginBase {
 	 * Set the lobby items
 	 */
 	public function setLobbyItems() {
-		$playerToggle = Item::get(Item::CLOCK);
-		$playerToggle->setCustomName(Utils::translateColors("&l&6Toggle players"));
-		$spawnWarp = Item::get(Item::BED);
-		$spawnWarp->setCustomName(Utils::translateColors("&l&aWarp to hub"));
 		$this->lobbyItems = [
 			Item::get(Item::AIR),
-			$playerToggle,
+			new PlayerToggleItem(),
 			Item::get(Item::AIR),
 			Item::get(Item::AIR),
 			Item::get(Item::AIR),
-			$spawnWarp
+			new SpawnWarpItem(),
+			Item::get(Item::AIR),
+			Item::get(Item::AIR),
+			new ServerSelector(),
 		];
 	}
 
@@ -207,6 +212,10 @@ class Main extends PluginBase {
 	 */
 	public function giveLobbyItems(Player $player) {
 		self::giveItems($player, $this->lobbyItems, true);
+	}
+
+	public function addGuiConatiners(CorePlayer $player) {
+		$player->addGuiContainer(new ServerSelectionContainer($player), Main::GUI_SERVER_SELECTION_CONTAINER, true);
 	}
 
 	/**
