@@ -78,8 +78,6 @@ class Main extends PluginBase {
 		$components = $this->getServer()->getPluginManager()->getPlugin("Components");
 		if(!$components instanceof \core\Main) throw new PluginException("Components plugin isn't loaded!");
 		$this->components = $components;
-		if(!is_dir($this->getDataFolder() . "data")) @mkdir($this->getDataFolder() . "data");
-		if(!is_dir($this->getDataFolder() . "data" . DIRECTORY_SEPARATOR . "skins")) @mkdir($this->getDataFolder() . "data" . DIRECTORY_SEPARATOR . "skins");
 		$this->loadConfigs();
 		$this->setArenaManager();
 		$this->setListener();
@@ -91,12 +89,16 @@ class Main extends PluginBase {
 	}
 
 	public function loadConfigs() {
+		if(!is_dir($this->getDataFolder())) @mkdir($this->getDataFolder());
+		if(!is_dir($this->getDataFolder() . "data")) @mkdir($this->getDataFolder() . "data");
+		if(!is_dir($this->getDataFolder() . "lang")) @mkdir($this->getDataFolder() . "lang");
+		if(!is_dir($this->getDataFolder() . "data" . DIRECTORY_SEPARATOR . "skins")) @mkdir($this->getDataFolder() . "data" . DIRECTORY_SEPARATOR . "skins");
+		$msgPath = $this->getDataFolder() . self::MESSAGES_FILE_PATH;
+		if(!is_dir($msgPath)) @mkdir($msgPath);
 		$this->saveResource("Settings.yml");
 		$this->settings = new Config($this->getDataFolder() . "Settings.yml",  Config::YAML);
-		$path = $this->getDataFolder() . self::MESSAGES_FILE_PATH;
-		if(!is_dir($path)) @mkdir($path);
 		foreach(self::$languages as $lang => $filename) {
-			$file = $path . $filename;
+			$file = $msgPath . $filename;
 			$this->saveResource(self::MESSAGES_FILE_PATH . $filename);
 			if(!is_file($file)) {
 				echo "Couldn't find language file for '{$lang}'!\nPath: {$file}\n";
