@@ -21,6 +21,7 @@ namespace classicpvp;
 use pocketmine\event\Listener;
 use pocketmine\event\player\PlayerCreationEvent;
 use pocketmine\event\player\PlayerDeathEvent;
+use pocketmine\event\player\PlayerExhaustEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\player\PlayerKickEvent;
 use pocketmine\event\player\PlayerQuitEvent;
@@ -40,6 +41,14 @@ class ClassicPvPListener implements Listener {
 	 */
 	public function getPlugin() {
 		return $this->plugin;
+	}
+
+	public function onExhaust(PlayerExhaustEvent $event) {
+		$player = $event->getPlayer();
+		/** @var ClassicPvPPlayer $player */
+		if($player->getState() === ClassicPvPPlayer::STATE_PLAYING) {
+			$event->setCancelled(true);
+		}
 	}
 
 	public function onJoin(PlayerJoinEvent $event) {

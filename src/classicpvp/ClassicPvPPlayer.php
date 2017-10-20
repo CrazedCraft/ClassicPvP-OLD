@@ -19,7 +19,6 @@
 namespace classicpvp;
 
 use core\CorePlayer;
-use core\language\LanguageManager;
 use classicpvp\arena\Arena;
 use core\Utils;
 use pocketmine\entity\Projectile;
@@ -27,9 +26,8 @@ use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityRegainHealthEvent;
 use pocketmine\event\player\PlayerInteractEvent;
-use pocketmine\inventory\PlayerInventory;
 use pocketmine\item\Item;
-use pocketmine\item\Potion;
+use pocketmine\item\food\Potion;
 use pocketmine\utils\PluginException;
 
 class ClassicPvPPlayer extends CorePlayer {
@@ -69,7 +67,6 @@ class ClassicPvPPlayer extends CorePlayer {
 	public function setArena(Arena $arena) {
 		$this->arena = $arena;
 		$this->setPlayersVisible();
-		$this->setFoodEnabled(true);
 		$this->setFood(20);
 		$this->setStatus(CorePlayer::STATE_PLAYING);
 	}
@@ -109,7 +106,6 @@ class ClassicPvPPlayer extends CorePlayer {
 
 	public function removeArena() {
 		$this->arena = null;
-		$this->setFoodEnabled(false);
 		$this->setFood(20);
 		$this->setStatus(CorePlayer::STATE_LOBBY);
 	}
