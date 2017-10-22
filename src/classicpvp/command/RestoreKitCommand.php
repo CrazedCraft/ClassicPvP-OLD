@@ -35,7 +35,6 @@ class RestoreKitCommand extends CoreUserCommand {
 			$player->sendTranslatedMessage("MUST_BE_IN_ARENA_FOR_COMMAND");
 			return true;
 		}
-		return false;
 	}
 
 }

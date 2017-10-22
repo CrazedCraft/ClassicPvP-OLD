@@ -33,7 +33,7 @@ class HubCommand extends CoreUserCommand {
 	public function onRun(CorePlayer $player, array $args) {
 		/** @var ClassicPvPPlayer $player */
 		$player->kill();
-		$player->teleport($this->getPlugin()->getServer()->getDefaultLevel()->getSafeSpawn());
+		$player->teleport($this->getCore()->getServer()->getDefaultLevel()->getSafeSpawn());
 		$player->sendTranslatedMessage("HUB_COMMAND", [], true);
 		return true;
 	}

@@ -31,7 +31,7 @@ use classicpvp\command\HubCommand;
 use classicpvp\entity\npc\NPCManager;
 use classicpvp\task\UpdateInfoTextTask;
 use pocketmine\item\Item;
-use pocketmine\item\Potion;
+use pocketmine\item\food\Potion;
 use pocketmine\level\Position;
 use pocketmine\Player;
 use pocketmine\plugin\PluginBase;
