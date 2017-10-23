@@ -19,12 +19,10 @@
 namespace classicpvp;
 
 use classicpvp\command\RestoreKitCommand;
-use classicpvp\gui\containers\ServerSelectionContainer;
 use classicpvp\gui\item\PlayerToggleItem;
-use classicpvp\gui\item\serverselectors\ServerSelector;
-use classicpvp\gui\item\SpawnWarpItem;
-use core\CorePlayer;
 use core\entity\text\UpdatableFloatingText;
+use core\gui\item\defaults\serverselector\ServerSelector;
+use core\gui\item\defaults\SpawnWarpItem;
 use core\Utils;
 use classicpvp\arena\ArenaManager;
 use classicpvp\command\HubCommand;
@@ -214,10 +212,6 @@ class Main extends PluginBase {
 	 */
 	public function giveLobbyItems(Player $player) {
 		self::giveItems($player, $this->lobbyItems, true);
-	}
-
-	public function addGuiConatiners(CorePlayer $player) {
-		$player->addGuiContainer(new ServerSelectionContainer($player), Main::GUI_SERVER_SELECTION_CONTAINER, true);
 	}
 
 	/**
