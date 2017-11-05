@@ -89,7 +89,6 @@ class Main extends PluginBase {
 	public function loadConfigs() {
 		if(!is_dir($this->getDataFolder())) @mkdir($this->getDataFolder());
 		if(!is_dir($this->getDataFolder() . "data")) @mkdir($this->getDataFolder() . "data");
-		if(!is_dir($this->getDataFolder() . "lang")) @mkdir($this->getDataFolder() . "lang");
 		if(!is_dir($this->getDataFolder() . "data" . DIRECTORY_SEPARATOR . "skins")) @mkdir($this->getDataFolder() . "data" . DIRECTORY_SEPARATOR . "skins");
 		$msgPath = $this->getDataFolder() . self::MESSAGES_FILE_PATH;
 		if(!is_dir($msgPath)) @mkdir($msgPath);
@@ -99,7 +98,7 @@ class Main extends PluginBase {
 			$file = $msgPath . $filename;
 			$this->saveResource(self::MESSAGES_FILE_PATH . $filename);
 			if(!is_file($file)) {
-				echo "Couldn't find language file for '{$lang}'!\nPath: {$file}\n";
+				$this->getLogger()->warning("Couldn't find language file for '{$lang}'! Path: {$file}");
 			} else {
 				$this->components->getLanguageManager()->registerLanguage($lang, (new Config($file, Config::JSON))->getAll());
 			}
